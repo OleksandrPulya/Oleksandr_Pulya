@@ -5,11 +5,20 @@ body {
   color: white;
   text-align: center;
   min-height: 100vh;
-  overflow: hidden;
+  overflow-x: hidden; /* дозволяє вертикальну прокрутку */
   position: relative;
 }
 
-/* Анімовані плями */
+.spot-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+}
+
 .spot {
   position: absolute;
   width: 300px;
@@ -18,7 +27,6 @@ body {
   opacity: 0.3;
   border-radius: 50%;
   animation: float 20s infinite ease-in-out;
-  z-index: -1;
 }
 
 .spot:nth-child(1) {
