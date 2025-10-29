@@ -44,10 +44,20 @@ body {
 
 /* Анімація руху плям */
 @keyframes float {
-  0%   { transform: translate(0, 0) scale(1); }
-  50%  { transform: translate(-40px, -30px) scale(1.3); }
-  100% { transform: translate(0, 0) scale(1); }
+  0% {
+    transform: scale(1);
+    opacity: 0.25;
+  }
+  50% {
+    transform: scale(1.6);
+    opacity: 0.4;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.25;
+  }
 }
+
 
 /* Контейнер для контенту */
 .container {
