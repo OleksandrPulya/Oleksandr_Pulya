@@ -30,7 +30,7 @@ body {
   background: radial-gradient(circle, #00ff00 0%, transparent 70%);
   opacity: 0.25;
   border-radius: 50%;
-  animation: float 25s infinite ease-in-out;
+  animation: float 10s infinite ease-in-out;
 }
 
 /* Індивідуальні позиції та затримки для кожної плями */
