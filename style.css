@@ -8,7 +8,7 @@ body {
   color: white;
   text-align: center;
   min-height: 100vh;
-  overflow: hidden; /* щоб плями не виходили за межі */
+  overflow-x: hidden; /* щоб плями не виходили за межі */
 }
 
 /* ===========================
