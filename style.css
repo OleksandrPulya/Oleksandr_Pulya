@@ -91,19 +91,21 @@ body {
    КНОПКИ ПОСИЛАНЬ
    =========================== */
 .button {
-  display: inline-flex;
+  display: block; /* Замість inline-flex */
   align-items: center;
   justify-content: center;
   gap: 8px;
   padding: 10px 20px;
-  margin: 10px;
+  margin: 10px auto; /* Центрування кнопки */
   border-radius: 12px;
   background-color: rgba(0,255,0,0.2);
   color: white;
   text-decoration: none;
   font-weight: bold;
   transition: transform 0.3s, background-color 0.3s;
+  max-width: 300px; /* Опціонально: обмеження ширини */
 }
+
 
 /* Іконки у кнопках */
 .button img {
