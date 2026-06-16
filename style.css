@@ -1,6 +1,7 @@
 /* ===========================
    ОСНОВНІ СТИЛІ СТОРІНКИ
    =========================== */
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -8,21 +9,25 @@ body {
   color: white;
   text-align: center;
   min-height: 100vh;
-  overflow-x: hidden; /* щоб плями не виходили за межі */
+  overflow-x: hidden;
 }
 
+
 /* ===========================
-   КОНТЕЙНЕР ГОЛОВНОГО КОНТЕНТУ
+   КОНТЕЙНЕР
    =========================== */
+
 .container {
   position: relative;
-  z-index: 2; /* контент поверх плям */
+  z-index: 2;
   padding-top: 60px;
 }
+
 
 /* ===========================
    ЛОГОТИП
    =========================== */
+
 .logo {
   width: 160px;
   height: auto;
@@ -30,9 +35,11 @@ body {
   box-shadow: 0 0 20px #00ff00;
 }
 
+
 /* ===========================
-   ПЛЯМИ НА ФОНІ
+   АНІМОВАНІ ПЛЯМИ
    =========================== */
+
 .spot-container {
   position: fixed;
   inset: 0;
@@ -40,10 +47,15 @@ body {
   z-index: 1;
 }
 
-/* Окремі зелені плями */
+
 .spot {
   position: absolute;
-  background: radial-gradient(circle, rgba(0,255,0,0.4) 0%, rgba(0,255,0,0) 70%);
+  background: radial-gradient(
+    circle,
+    rgba(0,255,0,0.4) 0%,
+    rgba(0,255,0,0) 70%
+  );
+
   border-radius: 50%;
   width: 400px;
   height: 400px;
@@ -52,119 +64,243 @@ body {
   opacity: 0.35;
 }
 
-/* Початкові позиції кожної плями */
-.spot:nth-child(1) { top: 10%; left: 20%; animation-delay: 0s; }
-.spot:nth-child(2) { top: 50%; left: 70%; animation-delay: 5s; }
-.spot:nth-child(3) { top: 80%; left: 30%; animation-delay: 10s; }
-.spot:nth-child(4) { top: 40%; left: 10%; animation-delay: 15s; }
-.spot:nth-child(5) { top: 20%; left: 80%; animation-delay: 20s; }
-.spot:nth-child(6) { top: 60%; left: 50%; animation-delay: 25s; }
-.spot:nth-child(7) { top: 75%; left: 15%; animation-delay: 30s; }
 
-/* ===========================
-   АНІМАЦІЯ РУХУ ТА "ПУЛЬСАЦІЇ"
-   =========================== */
+.spot:nth-child(1) { top:10%; left:20%; animation-delay:0s; }
+.spot:nth-child(2) { top:50%; left:70%; animation-delay:5s; }
+.spot:nth-child(3) { top:80%; left:30%; animation-delay:10s; }
+.spot:nth-child(4) { top:40%; left:10%; animation-delay:15s; }
+.spot:nth-child(5) { top:20%; left:80%; animation-delay:20s; }
+.spot:nth-child(6) { top:60%; left:50%; animation-delay:25s; }
+.spot:nth-child(7) { top:75%; left:15%; animation-delay:30s; }
+
+
 @keyframes float {
-  0% {
-    transform: translate(0, 0) scale(1);
-    opacity: 0.25;
-  }
-  25% {
-    transform: translate(40px, -60px) scale(1.3);
-    opacity: 0.35;
-  }
-  50% {
-    transform: translate(-50px, 40px) scale(1.5);
-    opacity: 0.4;
-  }
-  75% {
-    transform: translate(60px, 20px) scale(1.2);
-    opacity: 0.3;
-  }
-  100% {
-    transform: translate(0, 0) scale(1);
-    opacity: 0.25;
-  }
+
+0% {
+transform:translate(0,0) scale(1);
+opacity:.25;
 }
 
+25% {
+transform:translate(40px,-60px) scale(1.3);
+opacity:.35;
+}
+
+50% {
+transform:translate(-50px,40px) scale(1.5);
+opacity:.4;
+}
+
+75% {
+transform:translate(60px,20px) scale(1.2);
+opacity:.3;
+}
+
+100% {
+transform:translate(0,0) scale(1);
+opacity:.25;
+}
+
+}
+
+
+
 /* ===========================
-   КНОПКИ ПОСИЛАНЬ
+   КНОПКИ
    =========================== */
+
+
 .button {
-  display: block; /* Замість inline-flex */
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  padding: 10px 20px;
-  margin: 10px auto; /* Центрування кнопки */
-  border-radius: 12px;
-  background-color: rgba(0,255,0,0.2);
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  transition: transform 0.3s, background-color 0.3s;
-  max-width: 300px; /* Опціонально: обмеження ширини */
+
+display:block;
+
+padding:10px 20px;
+margin:10px auto;
+
+max-width:300px;
+
+border-radius:12px;
+
+color:white;
+text-decoration:none;
+font-weight:bold;
+
+transition:
+transform .3s,
+opacity .3s,
+box-shadow .3s,
+border-color .3s;
+
+
+border:2px solid transparent;
+
 }
 
 
-/* Іконки у кнопках */
+
+/* іконки */
+
 .button img {
-  width: 24px;
-  height: 24px;
-  border-radius: 6px;
+
+width:24px;
+height:24px;
+
+border-radius:6px;
+
 }
 
-/* Ефект при наведенні */
+
+
+/* загальний ефект */
+
 .button:hover {
-  transform: scale(1.1);
-  background-color: rgba(0,255,0,0.4);
+
+transform:scale(1.1);
+
+opacity:.65;
+
 }
 
-/* Індивідуальні кольори для різних типів кнопок */
 
-/* TikTok — градієнт двох кольорів */
-.tiktok {
-  background: linear-gradient(to right, #69C9D0, #EE1D52);
-}
-
-/* Discord — фірмовий фіолетовий */
-.discord {
-  background-color: #5865F2;
-}
-
-/* Telegram — бірюзовий */
-.telegram {
-  background-color: #00c1ff;
-}
-
-/* Steam — темно-синій колір */
-.steam {
-  background-color: #1b2838;
-  opacity: 1 !important; /* Примусово прибирає будь-яку прозорість */
-}
 
 /* ===========================
-   ФУТЕР
+   TIKTOK
    =========================== */
+
+
+.tiktok {
+
+background:linear-gradient(
+to right,
+#69C9D0,
+#EE1D52
+);
+
+}
+
+
+.tiktok:hover {
+
+border-color:#EE1D52;
+
+box-shadow:
+0 0 15px #EE1D52;
+
+}
+
+
+
+/* ===========================
+   DISCORD
+   =========================== */
+
+
+.discord {
+
+background:#5865F2;
+
+}
+
+
+.discord:hover {
+
+border-color:#5865F2;
+
+box-shadow:
+0 0 15px #5865F2;
+
+}
+
+
+
+/* ===========================
+   TELEGRAM
+   =========================== */
+
+
+.telegram {
+
+background:#00c1ff;
+
+}
+
+
+.telegram:hover {
+
+border-color:#00c1ff;
+
+box-shadow:
+0 0 15px #00c1ff;
+
+}
+
+
+
+/* ===========================
+   STEAM
+   =========================== */
+
+
+.steam {
+
+background:#1b2838;
+
+}
+
+
+.steam:hover {
+
+border-color:#66c0f4;
+
+box-shadow:
+0 0 15px #66c0f4;
+
+}
+
+
+
+/* ===========================
+   FOOTER
+   =========================== */
+
+
 footer {
-  margin-top: 40px;
-  opacity: 0.7;
-  font-size: 14px;
+
+margin-top:40px;
+
+opacity:.7;
+
+font-size:14px;
+
 }
 
-/* Заборона виділення всього на сайті */
+
+
+/* ===========================
+   ЗАХИСТ ВІД КОПІЮВАННЯ
+   =========================== */
+
+
 * {
-  user-select: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
+
+user-select:none;
+
+-webkit-user-select:none;
+
+-moz-user-select:none;
+
 }
 
-/* Заборона копіювання картинок */
+
 img {
-  pointer-events: none;
+
+pointer-events:none;
+
 }
 
-/* Але кнопки і посилання залишаються активними */
-a, button, iframe {
-  pointer-events: auto;
+
+a, iframe, button {
+
+pointer-events:auto;
+
 }
