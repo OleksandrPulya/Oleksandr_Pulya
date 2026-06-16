@@ -151,3 +151,20 @@ footer {
   opacity: 0.7;
   font-size: 14px;
 }
+
+/* Заборона виділення всього на сайті */
+* {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+}
+
+/* Заборона копіювання картинок */
+img {
+  pointer-events: none;
+}
+
+/* Але кнопки і посилання залишаються активними */
+a, button, iframe {
+  pointer-events: auto;
+}
