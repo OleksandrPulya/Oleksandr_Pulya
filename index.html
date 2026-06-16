@@ -77,5 +77,45 @@
     <!-- Нижній напис з авторським правом -->
     <footer>© 2025 O.PULYA</footer>
   </div>
+
+  <script>
+  // Заборона виділення тексту
+  document.addEventListener('selectstart', function(e) {
+    e.preventDefault();
+  });
+
+  // Заборона копіювання
+  document.addEventListener('copy', function(e) {
+    e.preventDefault();
+  });
+
+  // Заборона вирізання
+  document.addEventListener('cut', function(e) {
+    e.preventDefault();
+  });
+
+  // Заборона правої кнопки миші
+  document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+  });
+
+  // Заборона перетягування картинок
+  document.addEventListener('dragstart', function(e) {
+    if (e.target.tagName === 'IMG') {
+      e.preventDefault();
+    }
+  });
+
+  // Заборона Ctrl+C, Ctrl+U, Ctrl+S, F12
+  document.addEventListener('keydown', function(e) {
+    if (
+      (e.ctrlKey && ['c','u','s'].includes(e.key.toLowerCase())) ||
+      e.key === 'F12'
+    ) {
+      e.preventDefault();
+    }
+  });
+</script>
+  
 </body>
 </html>
